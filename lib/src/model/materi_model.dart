@@ -54,5 +54,6 @@ class MateriModel {
         "mapel": mapel,
         "tingkat": tingkat,
         "titel": titel,
+        //"published":published
     };
 }

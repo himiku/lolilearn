@@ -149,7 +149,7 @@ Future<void> buatmateri(MateriModel data)async{
   await ref.child('materi/${data.tingkat}/${data.mapel}').push().set(data.toMap());
 }
 Future<void> editmateri(MateriModel data)async{
-  await ref.child('materi/${data.tingkat}/${data.mapel}/${data.id}').set(data.toMap());
+  await ref.child('materi/${data.tingkat}/${data.mapel}/${data.id}').update(data.toMapEdit());
 }
 //------------------------------------------------------------admin----------------------------------
 
@@ -228,7 +228,7 @@ Future<void> editmateri(MateriModel data)async{
   }
 
   Future<void> unPublishSoalV2(String kelas,String mapel,String id)async{
-    return ref.child('carisoal/$kelas/$mapel/$id/published')..set(false).then((_)async{
+    return ref.child('carisoal/$kelas/$mapel/$id/published').set(false).then((_)async{
       await ref.child('banksoal/$id/published').set(false).then((_)=>print('unpublish sukses'));
       await ref.child('listbanksoal/$id/published').set(false);
     });

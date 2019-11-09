@@ -104,13 +104,14 @@ class _TabeditmateriState extends State<Tabeditmateri> {
             )).then((_)=>Navigator.pop(context));
           },)
           :FlatButton(color: Colors.lightBlue,child: Text('Edit'),onPressed: (){
-            api.buatmateri(MateriModel(
+            api.editmateri(MateriModel(
               id: widget.materi.id,
               tingkat: materiProv.tingkat,
               mapel: materiProv.mapel,
               kelas: materiProv.kelas,
               titel: materiProv.ttitel.text,
               isimateri: materiProv.tisi.text,
+              published: widget.materi.published
             )).then((_)=>Navigator.pop(context));
           },)
         ],),

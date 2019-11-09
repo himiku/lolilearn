@@ -15,7 +15,7 @@ class NewHomePage extends StatefulWidget {
   @override
   _NewHomePageState createState() => _NewHomePageState();
 }
- 
+  
 class _NewHomePageState extends State<NewHomePage> {
   @override
   Widget build(BuildContext context) {
